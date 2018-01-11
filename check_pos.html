@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perts os speech test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="libraries/jquery_google.js"></script>
+    <script src="libraries/https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+    "></script>
+    <!-- cdn & library setup of rita starts -->  
+    <script src="libraries/rita-full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rita/1.3.11/rita-full.js"></script>
+    <script src="libraries/rita-full.js"></script>
+    <script src="libraries/rita-full.min.js"></script>
+    <!-- cdn & library setup of rita ends --> 
+    <script src="pos.js"></script> <!-- script file -->
+</head>
+<body>
+    <div id="main">
+        <div id="searchBar">
+            <textarea name="" id="userInput" cols="50" rows="10" placeholder="input here:"></textarea>
+        </div>
+        <div id="result">
+            <p>tokens: </p>
+            <div id="pos">
+            </div>
+        </div>
+        <div id="words">
+                <p>leximes: </p>
+                <div id="lexime">
+                </div>
+            </div>
+    </div>
+    <script>
+        /*
+        var x = "It is a dark & stormy night!";
+        var m = new RiString(x);
+        var pos = m.pos();
+        var n = "noun";
+        var v = "verb";
+        var d = "determiner";
+        var jj = "adjective";
+        var In = "preposition";
+        var stop = "end of sentence";
+        var cc = "conjunction";
+        var cd = "Cardinal number";
+        var ex = "Existential there";
+        var fw = "Foreign word";
+        var md = "modal";
+        var pdt = "Predeterminer";
+        var psv = "Possessive ending";
+        var prp = "Personal pronoun";
+        var prp$ = "Possessive pronoun";
+        var rb = "Adverb";
+        var rbr =  "Adverb, comparative";
+        var rbs = "Adverb, superlative";
+        var rp = "Particle";
+        var sym = "Symbol";
+        var to = "to";
+        var uh = "Interjection";
+        var wdt = "Wh-determiner";
+        var wp = "Wh-pronoun";
+        var wp$ = "Possessive wh-pronoun";
+        var wrb = "Wh-adverb";
+        for (var i=0; i<pos.length; i++) {
+            if ( pos[i] === 'nn' ) {
+                document.write(pos[i] = n);
+                document.write("-");
+            }
+            if ( pos[i] === 'vbz' | pos[i] === 'vb' | pos[i] === 'vbg' | pos[i] === 'vbd' | pos[i] === 'vbn' | pos[i] === 'vbp') {
+                document.write(pos[i] = v);
+                document.write("-");
+            }
+            if ( pos[i] === 'dt' ) {
+                document.write(pos[i] = d);
+                document.write("-");
+            }
+            if ( pos[i] === 'jj' ) {
+                document.write(pos[i] = jj);
+                document.write("-");
+            }
+            if ( pos[i] === 'in' ) {
+                document.write(pos[i] = In);
+                document.write("-");
+            }
+            if ( pos[i] === '.' ) {
+                document.write(pos[i] = stop);
+                document.write("-");
+            }
+            if ( pos[i] === 'cc' | pos[i] === '&' ) {
+                document.write(pos[i] = cc);
+                document.write("-");
+            }
+            if ( pos[i] === 'cd' ) {
+                document.write(pos[i] = cd);
+                document.write("-");
+            }
+            if ( pos[i] === 'ex' ) {
+                document.write(pos[i] = ex);
+                document.write("-");
+            }
+            if ( pos[i] === 'fw' ) {
+                document.write(pos[i] = fw);
+                document.write("-");
+            }
+            if ( pos[i] === 'md' ) {
+                document.write(pos[i] = md);
+                document.write("-");
+            }
+            if ( pos[i] === 'pdt' ) {
+                document.write(pos[i] = pdt);
+                document.write("-");
+            }
+            if ( pos[i] === 'psv' ) {
+                document.write(pos[i] = psv);
+                document.write("-");
+            }
+            if ( pos[i] === 'prp' ) {
+                document.write(pos[i] = prp);
+                document.write("-");
+            }
+            if ( pos[i] === 'prp$' ) {
+                document.write(pos[i] = prp$);
+                document.write("-");
+            }
+            if ( pos[i] === 'rb' ) {
+                document.write(pos[i] = rb);
+                document.write("-");
+            }
+            if ( pos[i] === 'rbr' ) {
+                document.write(pos[i] = rbr);
+                document.write("-");
+            }
+            if ( pos[i] === 'rbs' ) {
+                document.write(pos[i] = rbs);
+                document.write("-");
+            }
+            if ( pos[i] === 'rp' ) {
+                document.write(pos[i] = rp);
+                document.write("-");
+            }
+            if ( pos[i] === 'to' ) {
+                document.write(pos[i] = to);
+                document.write("-");
+            }
+            if ( pos[i] === 'uh' ) {
+                document.write(pos[i] = uh);
+                document.write("-");
+            }
+            if ( pos[i] === 'wdt' ) {
+                document.write(pos[i] = wdt);
+                document.write("-");
+            }
+            if ( pos[i] === 'wp' ) {
+                document.write(pos[i] = wp);
+                document.write("-");
+            }
+            if ( pos[i] === 'wp$' ) {
+                document.write(pos[i] = wp$);
+                document.write("-");
+            }
+            if ( pos[i] === 'wrb' ) {
+                document.write(pos[i] = wrb);
+                document.write("-");
+            }
+            else{
+                document.write(pos[i] = "symbol");
+                document.write("-");
+            }
+        }
+        document.write("<br>");
+        document.write(m.words());
+        //console.log(m.pos());
+        */
+    </script>
+</body>
+</html>
