@@ -14,7 +14,32 @@ $(document).ready(function () {
         var d = "determiner";
         var jj = "adjective";
         var In = "preposition";
+        /*symbol starts*/
         var stop = "end-of-sentence";
+        var comma = "comma";
+        var xcla = "exclamatory_sign";
+        var gthan = "greater_than";
+        var lthan = "lesser_than";
+        var que = "question_mark";
+        var hyp_neg = "hyphen_or_negetive";
+        var uscore = "underscore";
+        var oparen = "open_parentheses";
+        var cparen = "close_parentheses";
+        var okb = "open_karlie_brace";
+        var ckb = "close_karlie_brace";
+        var osb = "open_square_bracket";
+        var csb = "close_square_bracket";
+        var plus = "plus";
+        var atrate = "at_the_rate_of";
+        var hash = "hash";
+        var dol_sign = "dollar_sign";
+        var percentage = "percentage";
+        var pow = "power";
+        var str = "star";
+        var eql = "equal";
+        var se_col = "semicolon";
+        var tilde = "tilde";
+        /*symbol ends*/
         var cc = "conjunction";
         var cd = "Cardinal-number";
         var ex = "Existential-there";
@@ -62,6 +87,98 @@ $(document).ready(function () {
                 }
                 if ( pos[i] === '.' ) {
                     emp+=stop+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === ',' ) {
+                    emp+=comma+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '!' ) {
+                    emp+=xcla+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '>' ) {
+                    emp+=gthan+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '<' ) {
+                    emp+=lthan+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '?' ) {
+                    emp+=que+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '-' ) {
+                    emp+=hyp_neg+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '_' ) {
+                    emp+=uscore+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '+' ) {
+                    emp+=plus+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '(' ) {
+                    emp+=oparen+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === ')' ) {
+                    emp+=cparen+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '{' ) {
+                    emp+=okb+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '}' ) {
+                    emp+=ckb+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '[' ) {
+                    emp+=osb+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === ']' ) {
+                    emp+=csb+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '@' ) {
+                    emp+=atrate+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '#' ) {
+                    emp+=hash+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '$' ) {
+                    emp+=dol_sign+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '%' ) {
+                    emp+=percentage+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '^' ) {
+                    emp+=pow+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '*' ) {
+                    emp+=str+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '=' ) {
+                    emp+=eql+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === '~' ) {
+                    emp+=tilde+" ";
+                    $("#pos").html(emp);
+                }
+                if ( pos[i] === ';' ) {
+                    emp+=se_col+" ";
                     $("#pos").html(emp);
                 }
                 if ( pos[i] === 'cc' | pos[i] === '&' ) {
