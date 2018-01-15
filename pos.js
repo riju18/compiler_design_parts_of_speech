@@ -69,7 +69,7 @@ $(document).ready(function () {
                     emp+=n+" ";
                     $("#pos").html(emp);
                 }
-                if (pos[i] ==='vbz'|pos[i] ==='vb'|pos[i] ==='vbg'|pos[i] ==='vbd'|pos[i] ==='vbn'|pos[i] ==='vbp') {
+                if (pos[i] ==='vbz'|| pos[i] ==='vb'|| pos[i] ==='vbg'|| pos[i] ==='vbd'|| pos[i] ==='vbn'|| pos[i] ==='vbp') {
                     emp+=v+" ";
                     $("#pos").html(emp);
                 }
@@ -181,7 +181,7 @@ $(document).ready(function () {
                     emp+=se_col+" ";
                     $("#pos").html(emp);
                 }
-                if ( pos[i] === 'cc' | pos[i] === '&' ) {
+                if ( pos[i] === 'cc' || pos[i] === '&' ) {
                     emp+=cc+" ";
                     $("#pos").html(emp);
                 }
